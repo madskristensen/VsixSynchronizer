@@ -13,7 +13,7 @@
         <CommandFlag>IconIsMoniker</CommandFlag>
         <CommandFlag>DynamicVisibility</CommandFlag>
         <Strings>
-          <ButtonText>Syncronize To Code File</ButtonText>
+          <ButtonText>Synchronize To Code File</ButtonText>
         </Strings>
       </Button>
     </Buttons>

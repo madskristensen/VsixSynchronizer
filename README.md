@@ -8,7 +8,7 @@ Download this extension from the [Open VSIX Gallery](http://vsixgallery.com/exte
 
 ---------------------------------------
 
-To enable the syncronization of .vsct and/or .vsixmanifest files, simply right-click the file in Solution Explorer and hit **Syncronize To Code File**.
+To enable the synchronization of .vsct and/or .vsixmanifest files, simply right-click the file in Solution Explorer and hit **Synchronize To Code File**.
 
 ![Context menu](art/context-menu.png)
 
