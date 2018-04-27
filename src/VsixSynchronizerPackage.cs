@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 using System.Threading;
-using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.TextTemplating.VSHost;
 using Task = System.Threading.Tasks.Task;
@@ -9,9 +8,8 @@ using Task = System.Threading.Tasks.Task;
 namespace VsixSynchronizer
 {
     [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
-    [InstalledProductRegistration("#110", "#112", "1.0", IconResourceID = 400)]       
+    [InstalledProductRegistration(Vsix.Name, Vsix.Description, Vsix.Version)]       
     [ProvideMenuResource("Menus.ctmenu", 1)]
-    [ProvideAutoLoad(VSConstants.UICONTEXT.SolutionExistsAndFullyLoaded_string, PackageAutoLoadFlags.BackgroundLoad)]
     [ProvideCodeGenerator(typeof(VsctCodeGenerator), VsctCodeGenerator.Name, VsctCodeGenerator.Description, true)]
     [ProvideCodeGenerator(typeof(VsixManifestCodeGenerator), VsixManifestCodeGenerator.Name, VsixManifestCodeGenerator.Description, true)]
     [Guid(PackageGuids.guidPackageString)]
