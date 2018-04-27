@@ -24,7 +24,7 @@ namespace VsixSynchronizer
 
             _dte = await package.GetServiceAsync(typeof(DTE)) as DTE2;
 
-            var commandService = await package.GetServiceAsync((typeof(IMenuCommandService))) as OleMenuCommandService;
+            var commandService = await package.GetServiceAsync((typeof(IMenuCommandService))) as IMenuCommandService;
             var cmdId = new CommandID(PackageGuids.guidVsixSynchronizerCmdSet, PackageIds.ToggleVsctSyncId);
 
             var cmd = new OleMenuCommand(OnExecute, cmdId)
@@ -39,7 +39,7 @@ namespace VsixSynchronizer
         private static void OnExecute(object sender, EventArgs e)
         {
             ProjectItem item = _dte.SelectedItems.Item(1).ProjectItem;
-            string ext = Path.GetExtension(item.FileNames[1])?.ToLowerInvariant();
+            string ext = Path.GetExtension(item?.FileNames[1] ?? "")?.ToLowerInvariant();
 
             if (_generators.TryGetValue(ext, out string generator))
             {
