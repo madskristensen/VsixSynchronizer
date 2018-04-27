@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <Extern href="stdidcmd.h"/>
+  <Extern href="vsshlids.h"/>
+
+  <Commands package="guidPackage">
+    <Buttons>
+      <Button guid="guidVsixSynchronizerCmdSet" id="ToggleVsctSyncId" priority="0x0100" type="Button">
+        <Parent guid="guidSHLMainMenu" id="IDG_VS_CTXT_ITEM_INCLUDEEXCLUDE"/>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Syncronize To Code File</ButtonText>
+        </Strings>
+      </Button>
+    </Buttons>
+  </Commands>
+  
+  <VisibilityConstraints>
+    <VisibilityItem guid="guidVsixSynchronizerCmdSet" id="ToggleVsctSyncId"  context="guidUIContext"/>
+  </VisibilityConstraints>
+
+  <Symbols>
+    <GuidSymbol name="guidPackage" value="{8c737258-7da1-4314-97e9-cb61f7cf8d22}" />
+    <GuidSymbol name="guidUIContext" value="{f19443c0-4f6b-45c3-bea5-80c1f8a538dd}" />
+
+    <GuidSymbol name="guidVsixSynchronizerCmdSet" value="{c6562423-a610-432a-8efa-ca46df10ddd6}">
+      <IDSymbol name="ToggleVsctSyncId" value="0x0200" />
+    </GuidSymbol>
+  </Symbols>
+</CommandTable>
