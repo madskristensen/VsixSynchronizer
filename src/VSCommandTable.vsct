@@ -3,11 +3,14 @@
 
   <Extern href="stdidcmd.h"/>
   <Extern href="vsshlids.h"/>
+  <Include href="KnownImageIds.vsct" />
 
   <Commands package="guidPackage">
     <Buttons>
       <Button guid="guidVsixSynchronizerCmdSet" id="ToggleVsctSyncId" priority="0x0100" type="Button">
         <Parent guid="guidSHLMainMenu" id="IDG_VS_CTXT_ITEM_INCLUDEEXCLUDE"/>
+        <Icon guid="ImageCatalogGuid" id="GenerateFile"/>
+        <CommandFlag>IconIsMoniker</CommandFlag>
         <CommandFlag>DynamicVisibility</CommandFlag>
         <Strings>
           <ButtonText>Syncronize To Code File</ButtonText>
