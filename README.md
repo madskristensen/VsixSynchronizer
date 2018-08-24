@@ -16,7 +16,7 @@ This will set the Custom Tool property on the file as shown here in the Property
 
 ![Property Grid](art/property-grid.png)
 
-It will apply the *VsctCodeGenerator* for .vsct files and *VsixManifestCodeGenerator* to .vsixmanifest files.
+It will apply the *VsctGenerator* for .vsct files and *VsixManifestGenerator* to .vsixmanifest files.
 
 A code-behind file is then being generated and kept up-to-date with any changes to the .vsct or .vsixmanifest files.
 

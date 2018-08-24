@@ -6,9 +6,9 @@ using Microsoft.VisualStudio.TextTemplating.VSHost;
 namespace VsixSynchronizer
 {
     [Guid("62949701-e45c-41fe-8304-eaf34569010d")]
-    public sealed class VsixManifestCodeGenerator : BaseCodeGeneratorWithSite
+    public sealed class VsixManifestGenerator : BaseCodeGeneratorWithSite
     {
-        public const string Name = nameof(VsixManifestCodeGenerator);
+        public const string Name = nameof(VsixManifestGenerator);
         public const string Description = "Generates .NET source code for .vsixmanifest files.";
 
         public override string GetDefaultExtension() => ".cs";

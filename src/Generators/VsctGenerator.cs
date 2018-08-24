@@ -9,9 +9,9 @@ using Microsoft.VisualStudio.TextTemplating.VSHost;
 namespace VsixSynchronizer
 {
     [Guid("cffb7601-6a1b-4f28-a2d0-a435e6686a2e")]
-    public sealed class VsctCodeGenerator : BaseCodeGeneratorWithSite
+    public sealed class VsctGenerator : BaseCodeGeneratorWithSite
     {
-        public const string Name = nameof(VsctCodeGenerator);
+        public const string Name = nameof(VsctGenerator);
         public const string Description = "Generates .NET source code for given VS IDE GUI definitions.";
 
         public override string GetDefaultExtension() => ".cs";

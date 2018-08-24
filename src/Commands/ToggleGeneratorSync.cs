@@ -14,8 +14,8 @@ namespace VsixSynchronizer
         private static DTE2 _dte;
         private static Dictionary<string, string> _generators = new Dictionary<string, string>
         {
-            { ".vsct", VsctCodeGenerator.Name },
-            { ".vsixmanifest", VsixManifestCodeGenerator.Name }
+            { ".vsct", VsctGenerator.Name },
+            { ".vsixmanifest", VsixManifestGenerator.Name }
         };
 
         public static async Task InitializeAsync(AsyncPackage package)
