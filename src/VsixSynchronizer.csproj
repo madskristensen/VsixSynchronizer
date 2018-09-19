@@ -4,16 +4,7 @@
   <PropertyGroup>
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
     <UseCodebase>true</UseCodebase>
-  </PropertyGroup>
-  <PropertyGroup>
-    <SignAssembly>false</SignAssembly>
-  </PropertyGroup>
-  <PropertyGroup>
-    <AssemblyOriginatorKeyFile>
-    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -81,7 +72,6 @@
     </Content>
     <None Include="packages.config" />
     <None Include="source.extension.vsixmanifest">
-      <SubType>Designer</SubType>
       <Generator>VsixManifestGenerator</Generator>
       <LastGenOutput>source.extension.resx</LastGenOutput>
     </None>
@@ -246,14 +236,6 @@
       <DependentUpon>source.extension.vsixmanifest</DependentUpon>
       <MergeWithCTO>true</MergeWithCTO>
       <ManifestResourceName>VSPackage</ManifestResourceName>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VsixSynchronizerPackage.resx">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>VsixSynchronizerPackage.cs</DependentUpon>
-      <MergeWithCTO>true</MergeWithCTO>
-      <ManifestResourceName>VSPackage</ManifestResourceName>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
