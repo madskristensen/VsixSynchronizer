@@ -10,8 +10,13 @@ namespace VsixSynchronizer
     [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
     [InstalledProductRegistration(Vsix.Name, Vsix.Description, Vsix.Version)]
     [ProvideMenuResource("Menus.ctmenu", 1)]
-    [ProvideCodeGenerator(typeof(VsctGenerator), VsctGenerator.Name, VsctGenerator.Description, true)]
-    [ProvideCodeGenerator(typeof(VsixManifestGenerator), VsixManifestGenerator.Name, VsixManifestGenerator.Description, true)]
+
+    [ProvideCodeGenerator(typeof(VsctGenerator), VsctGenerator.Name, VsctGenerator.Description, true, ProjectSystem = ProvideCodeGeneratorAttribute.CSharpProjectGuid, RegisterCodeBase = true)]
+    [ProvideCodeGeneratorExtension(VsctGenerator.Name, ".vsct")]
+
+    [ProvideCodeGenerator(typeof(VsixManifestGenerator), VsixManifestGenerator.Name, VsixManifestGenerator.Description, true, ProjectSystem = ProvideCodeGeneratorAttribute.CSharpProjectGuid, RegisterCodeBase = true)]
+    [ProvideCodeGeneratorExtension(VsixManifestGenerator.Name, ".vsixmanifest")]
+
     [Guid(PackageGuids.guidPackageString)]
     [ProvideUIContextRule(PackageGuids.guidUIContextString,
         name: "UI Context",
