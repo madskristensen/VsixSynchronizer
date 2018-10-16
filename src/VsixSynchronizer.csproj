@@ -271,10 +271,7 @@
 
   <Target Name="EmbedInteropTypesFix" AfterTargets="LinkVSSDKEmbeddableAssemblies">
     <ItemGroup>
-      <ReferencePath Condition="'%(FileName)' == 'EnvDTE80'
-           or '%(FileName)' == 'EnvDTE90'
-           or '%(FileName)' == 'EnvDTE100'
-              ">
+      <ReferencePath Condition="'%(FileName)' == 'EnvDTE80'">
         <EmbedInteropTypes>false</EmbedInteropTypes>
       </ReferencePath>
     </ItemGroup>
