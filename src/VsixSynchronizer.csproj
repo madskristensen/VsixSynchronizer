@@ -84,7 +84,7 @@
     </VSCTCompile>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.VisualStudio.SDK">
+    <PackageReference Include="Microsoft.VisualStudio.SDK" ExcludeAssets="runtime">
       <Version>16.0.200</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.VSSDK.BuildTools">
