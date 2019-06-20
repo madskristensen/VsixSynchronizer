@@ -1,6 +1,6 @@
-﻿using System.Reflection;
+﻿using Microsoft.VisualStudio.Shell;
+using System.Reflection;
 using System.Runtime.InteropServices;
-using Microsoft.VisualStudio.Shell;
 using VsixSynchronizer;
 
 [assembly: AssemblyTitle(Vsix.Name)]

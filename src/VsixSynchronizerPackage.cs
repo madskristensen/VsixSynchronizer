@@ -1,8 +1,8 @@
-﻿using System;
+﻿using Microsoft.VisualStudio.Shell;
+using Microsoft.VisualStudio.TextTemplating.VSHost;
+using System;
 using System.Runtime.InteropServices;
 using System.Threading;
-using Microsoft.VisualStudio.Shell;
-using Microsoft.VisualStudio.TextTemplating.VSHost;
 using Task = System.Threading.Tasks.Task;
 
 namespace VsixSynchronizer

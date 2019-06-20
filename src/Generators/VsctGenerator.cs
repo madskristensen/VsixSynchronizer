@@ -1,10 +1,10 @@
-﻿using System;
+﻿using Microsoft.VisualStudio.TextTemplating.VSHost;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Xml;
-using Microsoft.VisualStudio.TextTemplating.VSHost;
 
 namespace VsixSynchronizer
 {
@@ -14,7 +14,10 @@ namespace VsixSynchronizer
         public const string Name = nameof(VsctGenerator);
         public const string Description = "Generates .NET source code for given VS IDE GUI definitions.";
 
-        public override string GetDefaultExtension() => ".cs";
+        public override string GetDefaultExtension()
+        {
+            return ".cs";
+        }
 
         protected override byte[] GenerateCode(string inputFileName, string inputFileContent)
         {
@@ -93,7 +96,9 @@ namespace {FileNamespace}
                 // having XML loaded go through and find:
                 // CommandTable / Symbols / GuidSymbol* / IDSymbol*
                 if (xml.DocumentElement != null && xml.DocumentElement.Name == "CommandTable")
+                {
                     symbols = xml.DocumentElement["Symbols"];
+                }
             }
             catch
             {

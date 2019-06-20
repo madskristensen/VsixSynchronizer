@@ -1,7 +1,7 @@
-﻿using System;
+﻿using Microsoft.VisualStudio.TextTemplating.VSHost;
+using System;
 using System.Runtime.InteropServices;
 using System.Text;
-using Microsoft.VisualStudio.TextTemplating.VSHost;
 
 namespace VsixSynchronizer
 {
@@ -11,7 +11,10 @@ namespace VsixSynchronizer
         public const string Name = nameof(VsixManifestGenerator);
         public const string Description = "Generates .NET source code for .vsixmanifest files.";
 
-        public override string GetDefaultExtension() => ".cs";
+        public override string GetDefaultExtension()
+        {
+            return ".cs";
+        }
 
         protected override byte[] GenerateCode(string inputFileName, string inputFileContent)
         {
