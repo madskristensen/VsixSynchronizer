@@ -4,6 +4,7 @@ using System.ComponentModel.Design;
 using System.IO;
 using EnvDTE;
 using EnvDTE80;
+using Microsoft;
 using Microsoft.VisualStudio.Shell;
 using Task = System.Threading.Tasks.Task;
 
@@ -20,11 +21,14 @@ namespace VsixSynchronizer
 
         public static async Task InitializeAsync(AsyncPackage package)
         {
-            ThreadHelper.ThrowIfNotOnUIThread();
+            await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
 
             _dte = await package.GetServiceAsync(typeof(DTE)) as DTE2;
+            Assumes.Present(_dte);
 
             var commandService = await package.GetServiceAsync((typeof(IMenuCommandService))) as IMenuCommandService;
+            Assumes.Present(commandService);
+
             var cmdId = new CommandID(PackageGuids.guidVsixSynchronizerCmdSet, PackageIds.ToggleVsctSyncId);
 
             var cmd = new OleMenuCommand(OnExecute, cmdId)
@@ -38,6 +42,8 @@ namespace VsixSynchronizer
 
         private static void OnExecute(object sender, EventArgs e)
         {
+            ThreadHelper.ThrowIfNotOnUIThread();
+
             ProjectItem item = _dte.SelectedItems.Item(1).ProjectItem;
             string ext = Path.GetExtension(item?.FileNames[1] ?? "")?.ToLowerInvariant();
 
