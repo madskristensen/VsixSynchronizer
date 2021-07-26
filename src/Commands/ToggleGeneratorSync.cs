@@ -1,9 +1,10 @@
-﻿using EnvDTE;
-using Microsoft;
-using Microsoft.VisualStudio.Shell;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.IO;
+using EnvDTE;
+using EnvDTE80;
+using Microsoft;
+using Microsoft.VisualStudio.Shell;
 using Task = System.Threading.Tasks.Task;
 
 namespace VsixSynchronizer
@@ -20,7 +21,7 @@ namespace VsixSynchronizer
         {
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
 
-            var dte = await package.GetServiceAsync(typeof(DTE)) as DTE;
+            var dte = await package.GetServiceAsync(typeof(DTE)) as DTE2;
             Assumes.Present(dte);
 
             var commandService = await package.GetServiceAsync((typeof(IMenuCommandService))) as IMenuCommandService;
@@ -37,14 +38,14 @@ namespace VsixSynchronizer
             commandService.AddCommand(cmd);
         }
 
-        private static void OnExecute(DTE dte)
+        private static void OnExecute(DTE2 dte)
         {
             ThreadHelper.ThrowIfNotOnUIThread();
 
             ProjectItem item = dte.SelectedItems.Item(1).ProjectItem;
-            string ext = Path.GetExtension(item?.FileNames[1] ?? "")?.ToLowerInvariant();
+            var ext = Path.GetExtension(item?.FileNames[1] ?? "")?.ToLowerInvariant();
 
-            if (_generators.TryGetValue(ext, out string generator))
+            if (_generators.TryGetValue(ext, out var generator))
             {
                 item.Properties.Item("CustomTool").Value = generator;
             }
