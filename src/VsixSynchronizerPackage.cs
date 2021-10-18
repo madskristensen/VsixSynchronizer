@@ -13,7 +13,7 @@ namespace VsixSynchronizer
 
     [ProvideCodeGenerator(typeof(VsctGenerator), VsctGenerator.Name, VsctGenerator.Description, true, ProjectSystem = ProvideCodeGeneratorAttribute.CSharpProjectGuid, RegisterCodeBase = true)]
     [ProvideCodeGeneratorExtension(VsctGenerator.Name, ".vsct")]
-
+    
     [ProvideCodeGenerator(typeof(VsixManifestGenerator), VsixManifestGenerator.Name, VsixManifestGenerator.Description, true, ProjectSystem = ProvideCodeGeneratorAttribute.CSharpProjectGuid, RegisterCodeBase = true)]
     [ProvideCodeGeneratorExtension(VsixManifestGenerator.Name, ".vsixmanifest")]
 
