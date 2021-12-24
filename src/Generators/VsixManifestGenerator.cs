@@ -36,17 +36,21 @@ namespace VsixSynchronizer
             sb.AppendLine("{");
             sb.AppendLine($"    internal sealed partial class Vsix");
             sb.AppendLine($"    {{");
-            sb.AppendLine($"        public const string Id = \"{manifest.ID}\";");
-            sb.AppendLine($"        public const string Name = \"{manifest.Name?.Replace("\\", "\\\\").Replace("\"", "\\\"")}\";");
-            sb.AppendLine($"        public const string Description = @\"{manifest.Description}\";");
-            sb.AppendLine($"        public const string Language = \"{manifest.Language}\";");
-            sb.AppendLine($"        public const string Version = \"{manifest.Version}\";");
-            sb.AppendLine($"        public const string Author = \"{manifest.Author?.Replace("\\", "\\\\").Replace("\"", "\\\"")}\";");
-            sb.AppendLine($"        public const string Tags = \"{manifest.Tags?.Replace("\\", "\\\\").Replace("\"", "\\\"")}\";");
+            sb.AppendLine($"        public const string Id = \"{EscapeString(manifest.ID)}\";");
+            sb.AppendLine($"        public const string Name = \"{EscapeString(manifest.Name)}\";");
+            sb.AppendLine($"        public const string Description = @\"{EscapeVerbatimString(manifest.Description)}\";");
+            sb.AppendLine($"        public const string Language = \"{EscapeString(manifest.Language)}\";");
+            sb.AppendLine($"        public const string Version = \"{EscapeString(manifest.Version)}\";");
+            sb.AppendLine($"        public const string Author = \"{EscapeString(manifest.Author)}\";");
+            sb.AppendLine($"        public const string Tags = \"{EscapeString(manifest.Tags)}\";");
             sb.AppendLine($"    }}");
             sb.AppendLine("}");
 
             return sb.ToString();
         }
+        
+        private static string EscapeString(string value) => value?.Replace("\\", "\\\\").Replace("\"", "\\\"");
+        
+        private static string EscapeVerbatimString(string value) => value?.Replace("\"", "\"\"");
     }
 }
