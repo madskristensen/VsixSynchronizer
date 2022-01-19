@@ -36,15 +36,13 @@ namespace VsixSynchronizer
             sb.AppendLine("{");
             sb.AppendLine($"    public sealed partial class {FileNamespace}Manifest");
             sb.AppendLine($"    {{");
-            sb.AppendLine($"        public static {FileNamespace}Manifest Instance {{ get; }} = new {FileNamespace}Manifest();");
-            sb.AppendLine();
-            sb.AppendLine($"        public string Id {{ get; }} = \"{EscapeString(manifest.ID)}\";");
-            sb.AppendLine($"        public string Name {{ get; }} = \"{EscapeString(manifest.Name)}\";");
-            sb.AppendLine($"        public string Description {{ get; }} = @\"{EscapeVerbatimString(manifest.Description)}\";");
-            sb.AppendLine($"        public string Language {{ get; }} = \"{EscapeString(manifest.Language)}\";");
-            sb.AppendLine($"        public string Version {{ get; }} = \"{EscapeString(manifest.Version)}\";");
-            sb.AppendLine($"        public string Author {{ get; }} = \"{EscapeString(manifest.Author)}\";");
-            sb.AppendLine($"        public string Tags {{ get; }} = \"{EscapeString(manifest.Tags)}\";");
+            sb.AppendLine($"        public const string Id = \"{EscapeString(manifest.ID)}\";");
+            sb.AppendLine($"        public const string Name = \"{EscapeString(manifest.Name)}\";");
+            sb.AppendLine($"        public const string Description = @\"{EscapeVerbatimString(manifest.Description)}\";");
+            sb.AppendLine($"        public const string Language = \"{EscapeString(manifest.Language)}\";");
+            sb.AppendLine($"        public const string Version = \"{EscapeString(manifest.Version)}\";");
+            sb.AppendLine($"        public const string Author = \"{EscapeString(manifest.Author)}\";");
+            sb.AppendLine($"        public const string Tags = \"{EscapeString(manifest.Tags)}\";");
             sb.AppendLine($"    }}");
             sb.AppendLine("}");
 
