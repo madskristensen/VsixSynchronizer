@@ -62,14 +62,14 @@ namespace {FileNamespace}
     /// <summary>
     /// Helper class that exposes all GUIDs used across VS Package.
     /// </summary>
-    internal sealed partial class PackageGuids
+    public sealed partial class {FileNamespace}PackageGuids
     {{
 {guids}
     }}
     /// <summary>
     /// Helper class that encapsulates all CommandIDs uses across VS Package.
     /// </summary>
-    internal sealed partial class PackageIds
+    public sealed partial class {FileNamespace}PackageIds
     {{
 {ids}
     }}
