@@ -11,21 +11,10 @@ namespace VsixSynchronizer
     /// Helper class that exposes all GUIDs used across VS Package.
     /// </summary>
     internal sealed partial class PackageGuids
-    {
-        public const string guidPackageString = "8c737258-7da1-4314-97e9-cb61f7cf8d22";
-        public static Guid guidPackage = new Guid(guidPackageString);
-
-        public const string guidUIContextString = "f19443c0-4f6b-45c3-bea5-80c1f8a538dd";
-        public static Guid guidUIContext = new Guid(guidUIContextString);
-
-        public const string guidVsixSynchronizerCmdSetString = "c6562423-a610-432a-8efa-ca46df10ddd6";
-        public static Guid guidVsixSynchronizerCmdSet = new Guid(guidVsixSynchronizerCmdSetString);
-    }
+    { }
     /// <summary>
     /// Helper class that encapsulates all CommandIDs uses across VS Package.
     /// </summary>
     internal sealed partial class PackageIds
-    {
-        public const int ToggleVsctSyncId = 0x0200;
-    }
+    { }
 }

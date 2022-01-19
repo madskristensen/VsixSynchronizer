@@ -5,6 +5,7 @@ using EnvDTE;
 using EnvDTE80;
 using Microsoft;
 using Microsoft.VisualStudio.Shell;
+using System;
 using Task = System.Threading.Tasks.Task;
 
 namespace VsixSynchronizer
@@ -27,7 +28,7 @@ namespace VsixSynchronizer
             var commandService = await package.GetServiceAsync((typeof(IMenuCommandService))) as IMenuCommandService;
             Assumes.Present(commandService);
 
-            var cmdId = new CommandID(PackageGuids.guidVsixSynchronizerCmdSet, PackageIds.ToggleVsctSyncId);
+            var cmdId = new CommandID(new Guid("c6562423-a610-432a-8efa-ca46df10ddd6"), 0x0200);
 
             var cmd = new OleMenuCommand((s, e) => { OnExecute(dte); }, cmdId)
             {

@@ -17,8 +17,8 @@ namespace VsixSynchronizer
     [ProvideCodeGenerator(typeof(VsixManifestGenerator), VsixManifestGenerator.Name, VsixManifestGenerator.Description, true, ProjectSystem = ProvideCodeGeneratorAttribute.CSharpProjectGuid, RegisterCodeBase = true)]
     [ProvideCodeGeneratorExtension(VsixManifestGenerator.Name, ".vsixmanifest")]
 
-    [Guid(PackageGuids.guidPackageString)]
-    [ProvideUIContextRule(PackageGuids.guidUIContextString,
+    [Guid("8c737258-7da1-4314-97e9-cb61f7cf8d22")]
+    [ProvideUIContextRule("f19443c0-4f6b-45c3-bea5-80c1f8a538dd",
         name: "UI Context",
         expression: "vsct | vsixmanifest",
         termNames: new[] { "vsct", "vsixmanifest" },
