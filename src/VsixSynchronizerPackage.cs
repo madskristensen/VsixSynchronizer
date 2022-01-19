@@ -8,7 +8,7 @@ using Task = System.Threading.Tasks.Task;
 namespace VsixSynchronizer
 {
     [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
-    [InstalledProductRegistration(Vsix.Name, Vsix.Description, Vsix.Version)]
+    [InstalledProductRegistration("VSIX Synchronizer", @"Provides the ability to generate code-behind files for .vsixmanfiest and .vsct files in managed code to make the information easy to consume from the rest of the extension.", "1.0")]
     [ProvideMenuResource("Menus.ctmenu", 1)]
 
     [ProvideCodeGenerator(typeof(VsctGenerator), VsctGenerator.Name, VsctGenerator.Description, true, ProjectSystem = ProvideCodeGeneratorAttribute.CSharpProjectGuid, RegisterCodeBase = true)]
