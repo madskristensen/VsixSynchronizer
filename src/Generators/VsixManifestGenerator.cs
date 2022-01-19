@@ -34,7 +34,7 @@ namespace VsixSynchronizer
 
             sb.AppendLine($"namespace {FileNamespace}");
             sb.AppendLine("{");
-            sb.AppendLine($"    internal sealed partial class Vsix");
+            sb.AppendLine($"    public sealed partial class {FileNamespace}Manifest");
             sb.AppendLine($"    {{");
             sb.AppendLine($"        public const string Id = \"{EscapeString(manifest.ID)}\";");
             sb.AppendLine($"        public const string Name = \"{EscapeString(manifest.Name)}\";");
