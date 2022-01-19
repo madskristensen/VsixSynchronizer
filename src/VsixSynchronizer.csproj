@@ -84,6 +84,12 @@
     </VSCTCompile>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.AppDesigner">
+      <Version>15.0.6142705</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.ManagedInterfaces">
+      <Version>17.0.32112.339</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.SDK" ExcludeAssets="runtime">
       <Version>17.0.0-previews-4-31709-430</Version>
       <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
