@@ -46,7 +46,7 @@ namespace VsixSynchronizer
             sb.AppendLine("    /// <summary>");
             sb.AppendLine("    /// Helper class that exposes all GUIDs used across VS Package.");
             sb.AppendLine("    /// </summary>");
-            sb.AppendLine("    internal sealed partial class PackageGuids");
+            sb.AppendLine("    public sealed partial class {FileNamespace}PackageGuids");
             sb.Append("    {");
 
             foreach (KeyValuePair<string, string> guid in guids)
@@ -61,7 +61,7 @@ namespace VsixSynchronizer
             sb.AppendLine("    /// <summary>");
             sb.AppendLine("    /// Helper class that encapsulates all CommandIDs uses across VS Package.");
             sb.AppendLine("    /// </summary>");
-            sb.AppendLine("    internal sealed partial class PackageIds");
+            sb.AppendLine("    public sealed partial class {FileNamespace}PackageIds");
             sb.AppendLine("    {");
 
             foreach (KeyValuePair<string, string> id in ids)
