@@ -49,6 +49,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Commands\ToggleGeneratorSync.cs" />
+    <Compile Include="Extensions\StringBuilderExtensions.cs" />
     <Compile Include="Generators\VsixManifest.cs" />
     <Compile Include="Generators\VsixManifestGenerator.cs" />
     <Compile Include="Generators\VsctGenerator.cs" />

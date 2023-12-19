@@ -43,6 +43,8 @@ namespace VsixSynchronizer
             manifest.ReleaseNotesUrl = ParseNode(doc, "ReleaseNotes", false);
             manifest.Tags = ParseNode(doc, "Tags", false);
             manifest.Version = new Version(ParseNode(doc, "Identity", true, "Version")).ToString();
+            bool.TryParse(ParseNode(doc, "Preview", false), out var isPreview);
+            manifest.IsPreview = isPreview;
         }
 
         private static void Vs2010Format(XmlDocument doc, VsixManifest manifest)
@@ -59,6 +61,8 @@ namespace VsixSynchronizer
             manifest.Preview = ParseNode(doc, "PreviewImage", false);
             manifest.ReleaseNotesUrl = ParseNode(doc, "ReleaseNotes", false);
             manifest.Version = new Version(ParseNode(doc, "Version", true)).ToString();
+            bool.TryParse(ParseNode(doc, "Preview", false), out var isPreview);
+            manifest.IsPreview = isPreview;
         }
 
         private static string ParseNode(XmlDocument doc, string name, bool required, string attribute = "")
