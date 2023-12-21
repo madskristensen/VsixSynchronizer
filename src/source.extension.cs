@@ -14,5 +14,6 @@ namespace VsixSynchronizer
         public const string Version = "1.0";
         public const string Author = "Mads Kristensen";
         public const string Tags = "vsix, vssdk";
+        public const bool IsPreview = false;
     }
 }

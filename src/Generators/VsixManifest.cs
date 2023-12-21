@@ -15,6 +15,7 @@
         public string GettingStartedUrl { get; set; }
         public string ReleaseNotesUrl { get; set; }
         public string MoreInfoUrl { get; set; }
+        public bool IsPreview { get; set; }
 
         public override string ToString()
         {
