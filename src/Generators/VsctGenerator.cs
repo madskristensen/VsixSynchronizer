@@ -55,7 +55,7 @@ namespace VsixSynchronizer
             sb.AppendLine("    }");
             sb.AppendLine();
             sb.AppendLine("    /// <summary>");
-            sb.AppendLine("    /// Helper class that encapsulates all CommandIDs uses across VS Package.");
+            sb.AppendLine("    /// Helper class that encapsulates all CommandIDs used across VS Package.");
             sb.AppendLine("    /// </summary>");
             sb.AppendLine("    internal sealed partial class PackageIds");
             sb.AppendLine("    {");

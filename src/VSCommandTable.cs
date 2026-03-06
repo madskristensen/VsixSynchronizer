@@ -22,7 +22,7 @@ namespace VsixSynchronizer
         public static Guid guidVsixSynchronizerCmdSet = new Guid(guidVsixSynchronizerCmdSetString);
     }
     /// <summary>
-    /// Helper class that encapsulates all CommandIDs uses across VS Package.
+    /// Helper class that encapsulates all CommandIDs used across VS Package.
     /// </summary>
     internal sealed partial class PackageIds
     {
